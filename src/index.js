@@ -3,9 +3,21 @@ import ReactDOM from 'react-dom';
 export const App = () => {
   const mamma = { text: 'mimmo' };
   return (
-    <div style={{ color: 'red' }}>
-      <p>Hi There!</p>
-      <p>{mamma.text}</p>
+    <div className='ui container comments'>
+      <div className='comment'>
+        <a href='/' className='avatar'>
+          <img src='' alt='avatar' />
+        </a>
+        <div className='content'>
+          <a href='/' className='author'>
+            Sam
+          </a>
+          <div className='metadata'>
+            <span className='date'>Today at 6:00PM</span>
+          </div>
+          <div className='text'>Nice post!</div>
+        </div>
+      </div>
     </div>
   );
 };
