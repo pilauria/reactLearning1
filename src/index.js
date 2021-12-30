@@ -1,23 +1,49 @@
 import ReactDOM from 'react-dom';
+import { CommentDetail } from './CommentDetail';
+import { ApprovalCard } from './ApprovalCard';
+import faker from 'faker';
 
 export const App = () => {
-  const mamma = { text: 'mimmo' };
   return (
     <div className='ui container comments'>
-      <div className='comment'>
-        <a href='/' className='avatar'>
-          <img src='' alt='avatar' />
-        </a>
-        <div className='content'>
-          <a href='/' className='author'>
-            Sam
-          </a>
-          <div className='metadata'>
-            <span className='date'>Today at 6:00PM</span>
-          </div>
-          <div className='text'>Nice post!</div>
+      <ApprovalCard>
+        <div>
+          <h4>Warning</h4>
         </div>
-      </div>
+      </ApprovalCard>
+      <ApprovalCard>
+        <CommentDetail
+          author='Sam'
+          timeAgo='Today at 4:45PM'
+          text='Nice Blog!'
+          avatar={faker.image.image()}
+        />
+      </ApprovalCard>
+      <ApprovalCard>
+        <CommentDetail
+          author='Mamma'
+          timeAgo='Today at 2:42PM'
+          text='Nice Post!'
+          avatar={faker.image.image()}
+        />
+      </ApprovalCard>
+
+      <ApprovalCard>
+        <CommentDetail
+          author='Mimmo'
+          timeAgo='Yesterday at 1:00PM'
+          text='Nice!'
+          avatar={faker.image.image()}
+        />
+      </ApprovalCard>
+      <ApprovalCard>
+        <CommentDetail
+          author='Mommo'
+          timeAgo='Yesterday at 3:45AM'
+          text='Mamma mia!'
+          avatar={faker.image.image()}
+        />
+      </ApprovalCard>
     </div>
   );
 };
